@@ -38,20 +38,23 @@ def extract_code_block(message: str):
     return code_blocks
 
 def show_code_blocks(code_blocks: list):
+	print("Here's the code: \n")
+	print("```python")
 	for code_block in code_blocks:
 		lines = code_block.strip().split('\n')
 		for line in lines:
 			print(line)
+	print("```")
 
-def execute_code_blocks(message: str):
-    code_blocks = extract_code_block(message)
+# def execute_code_blocks(message: str):
+#     code_blocks = extract_code_block(message)
 
-    for code_block in code_blocks:
-        try:
-            exec(code_block)
-            print("実行完了: \n", code_block)
-        except Exception as e:
-            print(f"実行エラー: {e}\nコードブロック: \n{code_block}")
+#     for code_block in code_blocks:
+#         try:
+#             exec(code_block)
+#             print("実行完了: \n", code_block)
+#         except Exception as e:
+#             print(f"実行エラー: {e}\nコードブロック: \n{code_block}")
 
 if __name__ == "__main__":
 	print("Please explain your function.")
